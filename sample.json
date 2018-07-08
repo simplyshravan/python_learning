@@ -1,0 +1,26 @@
+[
+    {
+        "signOffDate": "30-Sep-17",
+        "fundEntityType": "ENTITY_ID",
+        "fundId": [
+            "44182"
+        ],
+        "benchmarkIds": [
+            "MAN"
+        ],
+        "source": "IP",
+        "returnType": "TR    "
+    },
+    {
+        "signOffDate": "30-Nov-17",
+        "fundEntityType": "ENTITY_ID",
+        "fundId": [
+            "44182"
+        ],
+        "benchmarkIds": [
+            "VAN"
+        ],
+        "source": "IP",
+        "returnType": "TR"
+    }
+]
