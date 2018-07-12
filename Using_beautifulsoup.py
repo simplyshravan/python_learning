@@ -6,18 +6,27 @@ import pandas as pd
 from datetime import datetime
  
 #print(datetime.fromtimestamp(1287225997)) DATE OF LAST POST
-mylist=list(("a b c d e f g h i j k l m n o p q r s t u v w x y z").split())
+#mylist=list(("a b c d e f g h i j k l m n o p q r s t u v w x y z").split())
 listofurls=[]
-print(mylist)
-for i in range(21):
-    if i+6 > 25:
-        i=i-19
-    listofurls.append('http://www.instagram.com/'+''.join(mylist[i:i+6]))
+#print(mylist)
+#for i in range(21):
+#    if i+6 > 25:
+#        i=i-19
+#    listofurls.append('http://www.instagram.com/'+''.join(mylist[i:i+6]))
+
+from nltk.corpus import words
+word_list = words.words()
+j=0
+for i in word_list:
+    listofurls.append('http://www.instagram.com/'+i)
+    j=j+1
+    if j >100:
+        break;    
 
 print(listofurls)
 #listofurls='http://www.instagram.com/shravan'
 
-
+#listofurls=['https://www.instagram.com/aaron/']
 df=pd.DataFrame(columns=['Username','is_private','biography','external_url','Followers','Following','Posts','Profile_pic','Profile_pic_hd'])
 #print(df)
 #i=0
@@ -27,8 +36,8 @@ df=pd.DataFrame(columns=['Username','is_private','biography','external_url','Fol
 for url in listofurls:
     r=requests.get(url);
     soup=BeautifulSoup(r.text,'lxml');
-    if metatag1.get_text().strip()!='Page Not Found • Instagram': 
-        metatag1=soup.find('title')
+    metatag1=soup.find('title')
+    if metatag1.get_text().strip()!='Page Not Found • Instagram':         
         username=(metatag1.get_text().split(')')[0]+')').replace('\n','')
         metatag=soup.find_all('meta',{'name':'description'})
         desc=metatag[0]['content'].split(',');
@@ -45,11 +54,12 @@ for url in listofurls:
         for i in metatag3:
             for k in i:
                 if (str(k).find('window._sharedData')) > -1:
-                    for x in k.split(' = '):
+                    for x in k.split(' = {'):
                         if not x is None:
                             if str(x).find('{') > -1:
-                            #print(x)
-                                xy=json.loads(str(x).split(';')[0])
+                                print(username);
+                                print('#####'+x)
+                                xy=json.loads('{'+str(x).split(':true};')[0]+':true}')
                             #xy=json.loads(str(x)+'"}}]}}}}]}}')
                             #xy=json.loads(str(x)+'"}}}]}}')
                             #print(xy.keys())
