@@ -10,5 +10,7 @@ else:
   print('english')
 from nltk.corpus import words
 word_list = words.words()
-# prints 236736
-print(len(word_list))
+
+#print(len(word_list))
+#prints 236736
+#print(word_list)
