@@ -18,6 +18,8 @@ print(df.info())
 print(df.head())
 
 
+#df1=df[['Transaction','Year']]
+
 
 group_dt=df.groupby(['Year','Month']).agg(np.size)
 #print(group_dt.agg(np.size))
@@ -33,6 +35,10 @@ print(group_dt[group_dt['Transaction']==group_dt['Transaction'].max()])
 #sns.pairplot(group_dt)
 
 #sns.distplot(group_dt['Transaction'])
-sns.countplot(x=df['Year'],hue=df['Transaction'],data=df)
+#sns.countplot(x=df['Year'],hue=df['Month'],data=df)
+
+sns.pairplot(df)
 #group_dt=df.groupby(['Date','Month'])
 
+
+#sns.countplot(x=df['Month'],data=df)
