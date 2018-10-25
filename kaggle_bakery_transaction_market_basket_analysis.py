@@ -30,28 +30,57 @@ month_col= [ datetime.date(int(my_str.split("-")[0]),int( my_str.split("-")[1]),
 df['Weekday']=month_col
 #print(df.head())
 #print(df.columns)
-df1=df[['Transaction', 'Month', 'Year', 'Day','Weekday']]
+
+df.dropna(inplace=True)
+df['Day_of_week'] = pd.to_datetime(df['Date']).dt.weekday_name
+sales_by_day=df['Day_of_week'].value_counts()
+#print(sales_by_day)
+#print(df.head())
+#sns.barplot(x='Day_of_week', data=df)
+#sales_by_day.plot.bar(title='mychart')
+
+#sns.heatmap(df.isnull(),yticklabels=False,cbar=False,cmap='viridis')
+
+print(df[df['Item']==None])
+
+print(df.info())
+print(df.head())
+df['Hours']= df['Time'].str.split(':',n=1,expand=True)[0]
+
+
+print(df)
+
+df1=df[['Transaction', 'Month', 'Year', 'Day','Weekday','Hours']]
 print(df1.head())
 
 #df1=df[['Transaction','Year']]
 
 df1.drop_duplicates(inplace=True)
 group_yr=df1.groupby(['Year']).agg(np.size)
+print('group_yr')
 print(group_yr.head())
 
 group_weekday=df1.groupby(['Weekday']).agg(np.size)
+print('group_weekday')
 print(group_weekday)
 
 group_mth=df1.groupby(['Month']).agg(np.size)
+print('group_mth')
 print(group_mth)
 #sns.countplot(x=group_weekday['Transaction'],y=group_weekday['Weekday'],data=group_weekday)
 
-#sns.countplot(x=group_yr['Year'],data=group_yr)
-#sns.barplot(x='Month', y='Transaction', hue='Year', data=df1)
+sns.countplot(x='Hours',data=df1)
+#sns.countplot(x='Year',data=df1)
 
-sns.barplot(x='Weekday', y='Transaction', hue='Year', data=df1)
+#sns.countplot(x='Month',hue='Year',data=df1)
+#sns.countplot(x='Weekday',data=df1)
+
+#sns.countplot(x='Month',data=df1)
+#sns.barplot(x='Weekday', y='Transaction', data=df1)
 #sns.barplot(x=df1['Month'],data=df1)
 #sns.scatterplot(df1)
+
+
 #print(group_dt.agg(np.size))
 #print(group_dt.head())
 #group_month=df.groupby(['Date','Month'])
