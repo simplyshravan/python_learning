@@ -5,9 +5,6 @@ import numpy as np
 import datetime
 
 df=pd.read_csv(r'BreadBasket_DMS.csv')
-#print(df.head())
-#print(df.info())
-#print(df.describe())
 month_col=df['Date'].values
 month_col= [ my_str.split("-")[1] for my_str in month_col ]
 df['Month']=month_col
@@ -62,7 +59,7 @@ print(group_yr.head())
 
 group_weekday=df1.groupby(['Weekday']).agg(np.size)
 print('group_weekday')
-print(group_weekday)
+-print(group_weekday)
 
 group_mth=df1.groupby(['Month']).agg(np.size)
 print('group_mth')
