@@ -23,6 +23,28 @@ call_func=myfunc3(myfunc,4,5,10)  #myfunc3 act as decorator here
 call_func()
 
 #################################################################################################
+def myfunc31(func,x,y,z):
+    def inner():
+        print('inside myfunc31 inner')
+        func(x,y)+z
+    return inner
+
+def myfunc32(func,x,y,z):
+    def inner():
+        print('inside myfunc32 inner')
+        func(x,y)+z
+    return inner
+
+def myfunc33(x ,y):
+     print('inside myfunc33')
+     return x+y
+#print(myfunc3(myfunc,4,5,10))
+print('###############################################')
+callfunc=myfunc31(myfunc33,4,5,10) #myfunc31 is decorator
+callfunc()
+callfunc=myfunc32(myfunc33,4,5,10) #myfunc32 is decorator
+callfunc()
+#################################################################################################
 
 def myfunc5(func):
     def inner(x,y):
