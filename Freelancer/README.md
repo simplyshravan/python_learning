@@ -13,6 +13,6 @@ Otherwise Install Anaconda . It will provide all libraries.
 Also whereever you are running the Web_Scrapy_Project.py file create a images folder with file 
 Because all the image files will be downloaded there in images folder.
 
-Run the file as on commadn prompt
+Run the file as on command prompt
 
 python Web_Scrapy_Project.py 
