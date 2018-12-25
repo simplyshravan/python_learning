@@ -1,5 +1,5 @@
 from Web_Scrapy_Project import getchildurls,getnoofpages,getdata
-import threading 
+#import threading 
 import datetime
 
 
@@ -11,7 +11,8 @@ for i in getchildurls(url):
     if 'blog' in i:
         break;
     gnop=getnoofpages(i)
-    t1=threading.Thread(target=getdata, args=(i,gnop,))
-    t1.start()
-    t1.join()
-    break
+    getdata(i,gnop)
+    #t1=threading.Thread(target=getdata, args=(i,gnop,))
+    #t1.start()
+    #t1.join()
+    #break
