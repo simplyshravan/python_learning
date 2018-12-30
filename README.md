@@ -18,5 +18,3 @@ Different problems solved in each program
 * [Using BeatifulSoup on instagram](https://github.com/simplyshravan/python_learning/blob/master/Using_beautifulsoup.py)
 * [Udemy excercise on Linear Regression](https://github.com/simplyshravan/python_learning/blob/master/udemy_linearregression_excercise.py)
 * [Scrapping Linkedin](https://github.com/simplyshravan/python_learning/blob/master/Scrapping_linkedin.py)
-
-* [Linked List](https://github.com/trekhleb/javascript-algorithms/tree/master/src/data-structures/linked-list)
