@@ -17,4 +17,4 @@ Different problems solved in each program
 *[Using Flask+restful with customize port](https://github.com/simplyshravan/python_learning/blob/master/flask-hostname-port.py)
 *[Using BeatifulSoup on instagram](https://github.com/simplyshravan/python_learning/blob/master/Using_beautifulsoup.py)
 *[Udemy excercise on Linear Regression](https://github.com/simplyshravan/python_learning/blob/master/udemy_linearregression_excercise.py)
-*[Scrapping_Linkedin](https://github.com/simplyshravan/python_learning/blob/master/Scrapping_linkedin.py)
+*.[Scrapping Linkedin](https://github.com/simplyshravan/python_learning/blob/master/Scrapping_linkedin.py)
