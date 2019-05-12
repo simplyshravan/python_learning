@@ -61,7 +61,7 @@ def decorate(x,y):
 
 #print(myfunc5(decorate))
 print('###############################################')
-decorate(4,5) 
+print(decorate(4,5) )
 
 #################################################################################################
 
@@ -103,6 +103,7 @@ def myfunc8(func):
     return inner
 
 def myfunc9(func):
+    print('inside myfunc9 before inner')
     def inner(x,y):
         print('inside myfunc9 inner')
         return func(x,y)
@@ -110,35 +111,21 @@ def myfunc9(func):
     return inner
 
 
-@myfunc6
-@myfunc7
+@myfunc8
+@myfunc9
 def decorate2(x,y):
     print("calling decorate2")
+    print("calling decorate2---5")
+    print(x+y)
+    x=x+1
+    y=x+y
+    print(x+y)
+    for i in range(x-1,y):
+        print(i)
     return x+y
 
 
 
 #print(myfunc5(decorate))
 print('###############################################')
-decorate2(14,15)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(decorate2(14,15))
