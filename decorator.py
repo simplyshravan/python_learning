@@ -38,6 +38,7 @@ def myfunc32(func,x,y,z):
 def myfunc33(x ,y):
      print('inside myfunc33')
      return x+y
+
 #print(myfunc3(myfunc,4,5,10))
 print('###############################################')
 callfunc=myfunc31(myfunc33,4,5,10) #myfunc31 is decorator
@@ -129,3 +130,43 @@ def decorate2(x,y):
 #print(myfunc5(decorate))
 print('###############################################')
 print(decorate2(14,15))
+
+def myfunc81(func):
+    def inner(x,y):
+        print('inside myfunc81 inner')
+        return func(x,y)
+        #print('finishing myfunc81 inner')
+        #return 0
+        print('finishing myfunc81 inner')
+    return inner
+
+def myfunc91(func):
+    print('inside myfunc91 before inner')
+    def inner(x,y):
+        print('inside myfunc91 inner')
+        #return 1
+        print('finishing myfunc91 inner')
+        return func(x,y)
+    return inner
+
+
+@myfunc81
+@myfunc91
+def decorate21(x,y):
+    print("calling decorate21")
+    #return 3
+    print("calling decorate21---")
+    #print(x+y)
+    #x=x+1
+    #y=x+y
+    #print(x+y)
+    #for i in range(x-1,y):
+        #print(i)
+    return x+y
+
+
+
+#print(myfunc5(decorate))
+print('###############################################')
+print(decorate21(14,15))
+
