@@ -16,3 +16,4 @@ Because all the image files will be downloaded there in images folder.
 Run the file as on command prompt
 
 python Web_Scrapy_Project.py 
+python test_scrapy.py
