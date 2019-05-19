@@ -25,3 +25,5 @@ Different problems solved in each program
 * [Decorator](https://github.com/simplyshravan/python_learning/blob/master/decorator.py)
 * [Scrapping Linkedin](https://github.com/simplyshravan/python_learning/blob/master/Scrapping_linkedin.py)
 * [Creation of Excel file with Custom headers](https://github.com/simplyshravan/python_learning/blob/master/xlsx_creation.py)
+* [plot_groups in pyplot and scatter. Generate random colors at run time. Also add text to points in plot](https://github.com/simplyshravan/python_learning/blob/master/plot_groups.py)
+
