@@ -29,3 +29,4 @@ Different problems solved in each program
 * [plot_groups in pyplot and scatter. Generate random colors at run time. Also add text to points in plot](https://github.com/simplyshravan/python_learning/blob/master/plot_groups.py)
 * [creating wordcloud on text](https://github.com/simplyshravan/python_learning/blob/master/create_wordcloud.py)
 * [Plotly graphs with netowrkx](https://github.com/simplyshravan/python_learning/blob/master/plotly_test.ipynb)
+* [Get SVN files for commit messages](https://github.com/simplyshravan/python_learning/blob/master/get_svn_files_from_commit_message.py)
